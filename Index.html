@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengingat Pelajaran SMA/SMK</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>Pengingat Pelajaran</h1>
+            <p class="subtitle">Jangan lupa untuk mempersiapkan harimu dengan baik!</p>
+        </header>
+
+        <!-- Informasi Utama -->
+        <div class="info">
+            <div class="info-card">
+                <p><strong>Tanggal:</strong> <span id="tanggal"></span></p>
+            </div>
+            <div class="info-card">
+                <p><strong>Waktu:</strong> <span id="waktu"></span></p>
+            </div>
+            <div class="info-card">
+                <p><strong>Pelajaran:</strong></p>
+                <ul id="pelajaranList"><li>Belum diatur</li></ul>
+            </div>
+            <div class="info-card">
+                <p><strong>Tugas:</strong></p>
+                <ul id="tugasList"><li>Belum diatur</li></ul>
+            </div>
+            <div class="info-card">
+                <p><strong>Seragam:</strong> <span id="seragam">Belum diatur</span></p>
+            </div>
+        </div>
+
+        <!-- Tombol Login Admin -->
+        <div class="admin-login">
+            <button id="loginBtn" onclick="showLoginForm()">Login Admin</button>
+        </div>
+
+        <!-- Form Login Admin -->
+        <div id="login-container" style="display: none;">
+            <h2>Login Admin</h2>
+            <input type="password" id="adminPassword" placeholder="Masukkan Password">
+            <button onclick="login()">Login</button>
+            <button onclick="backToMain()">Kembali</button>
+            <p id="error-message" style="color: red;"></p>
+        </div>
+
+        <!-- Form Input Pengingat (untuk Admin) -->
+        <div id="input-section" style="display: none;">
+            <h3>Pengaturan Pengingat</h3>
+            <label for="pelajaranInput">Pelajaran Hari Ini:</label>
+            <input type="text" id="pelajaranInput" placeholder="Pelajaran (Pisahkan dengan koma)">
+            <label for="tugasInput">Tugas yang Belum Selesai:</label>
+            <input type="text" id="tugasInput" placeholder="Tugas (Pisahkan dengan koma)">
+            <label for="seragamInput">Seragam yang Dipakai:</label>
+            <input type="text" id="seragamInput" placeholder="Seragam">
+            <button onclick="updateReminder()">Simpan</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
